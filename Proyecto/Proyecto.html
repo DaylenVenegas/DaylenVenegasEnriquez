@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<title>Proyecto</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="js/jquery-ui.css">
+	<script src="js/jquery-3.4.1.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		$(function() {
+			$("#tabs").tabs();
+		});
+		
+	</script>
+	<style >
+		h1{
+			border-bottom: 3px solid #cc9900;
+			color: #996600;
+			font-size: 30px;
+		}
+		table, th, td{
+			border: 1px solid blue;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+		table tr:nth-child(odd) {
+			background-color: #2DF3C8;
+		}
+		table tr:nth-child(even) {
+			background-color: #ffffff;
+		}
+	</style>
+</head>
+<script >
+	var sistemas = [
+	{
+		"no_control":"17041472",
+        "al_apPat":"Venegas",
+        "al_apMat":"Enriquez",
+        "al_nombre":"Martha Daylen",
+        "al_genero":"Femenino"
+	},
+	{
+		"no_control":"17041440",
+        "al_apPat":"Casas",
+        "al_apMat":"Fausto",
+        "al_nombre":"Erick Fernando",
+        "al_genero":"Masculino"
+	},
+	{
+		"no_control":"17041455",
+        "al_apPat":"Moreno",
+        "al_apMat":"Cabral",
+        "al_nombre":"Mariana",
+        "al_genero":"Femenino"
+	},
+	{
+		"no_control":"17041456",
+        "al_apPat":"Navar",
+        "al_apMat":"Soto",
+        "al_nombre":"Jesus",
+        "al_genero":"Masculino"
+	},
+	{
+		"no_control":"17041457",
+        "al_apPat":"Ramirez",
+        "al_apMat":"Barboza",
+        "al_nombre":"Joel",
+        "al_genero":"Masculino"
+	},
+	{
+		"no_control":"17041471",
+        "al_apPat":"Vazquez",
+        "al_apMat":"Rodriguez",
+        "al_nombre":"Luis Eduardo",
+        "al_genero":"Masculino"
+	},
+	{
+		"no_control":"17041439",
+        "al_apPat":"Burciaga",
+        "al_apMat":"Valenzuela",
+        "al_nombre":"Leonardo Alan",
+        "al_genero":"Masculino"
+	},
+	{
+		"no_control":"17041469",
+        "al_apPat":"Vazquez",
+        "al_apMat":"Cabrera",
+        "al_nombre":"Ana Marlen",
+        "al_genero":"Femenino"
+	},
+	{
+		"no_control":"17041442",
+        "al_apPat":"Dominguez",
+        "al_apMat":"Ibarra",
+        "al_nombre":"Fernanda Yareni",
+        "al_genero":"Femenino"
+	},
+	{
+		"no_control":"17041460",
+        "al_apPat":"Paredes",
+        "al_apMat":"Castañeda",
+        "al_nombre":"Ana Guadalupe",
+        "al_genero":"Femenino"
+	}];
+</script>
+<script>
+	var maestros = [
+	{
+		"no_tarjeta":"18051501",
+		"ma_apPat":"Quiñones",
+		"ma_apMat":"Garcia",
+		"ma_nombre":"Carlos",
+		"ma_genero":"Masculino"
+	},
+	{
+		"no_tarjeta":"18051502",
+		"ma_apPat":"Rodriguez",
+		"ma_apMat":"Rivas",
+		"ma_nombre":"Jose Gabriel",
+		"ma_genero":"Masculino"
+	},
+	{
+		"no_tarjeta":"18051503",
+		"ma_apPat":"Dominguez",
+		"ma_apMat":"Flores",
+		"ma_nombre":"Araceli Soledad",
+		"ma_genero":"Femenino"
+	},
+	{
+		"no_tarjeta":"18051504",
+		"ma_apPat":"Flores",
+		"ma_apMat":"Nuñez",
+		"ma_nombre":"Veronica",
+		"ma_genero":"Femenino"
+	},
+	{
+		"no_tarjeta":"18051505",
+		"ma_apPat":"Ruiz",
+		"ma_apMat":"Carrete",
+		"ma_nombre":"J Guadalupe",
+		"ma_genero":"Masculino"
+	},
+	{
+		"no_tarjeta":"18051506",
+		"ma_apPat":"Ramos",
+		"ma_apMat":"Collins",
+		"ma_nombre":"Salvador",
+		"ma_genero":"Masculino"
+	}
+	];
+</script>
+<body>
+	<h1>Residencias Academia de Sistemas Computacionales</h1>
+	<br>
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">Alumnos</a></li>
+			<li><a href="#tabs-2">Maestros</a></li>
+			<li><a href="#tabs-3">Periodos</a></li>
+			<li><a href="#tabs-4">Residencias</a></li>
+			
+			
+		</ul>
+		<div id="tabs-1">
+			<div id="tabla"></div>
+	<script>
+		var i;
+	    var out = "<table>";
+	    for(i=0; i<sistemas.length; i++){
+	    	out +="<tr><td>" +
+	    	sistemas[i].no_control +
+	    	"</td><td>" +
+	    	sistemas[i].al_apPat +
+	    	"</td><td>" +
+	    	sistemas[i].al_apMat +
+	    	"</td><td>" +
+	    	sistemas[i].al_nombre +
+	    	"</td><td>" +
+	    	sistemas[i].al_genero +
+	    	"</td></tr>";
+	    } 
+	    out += "</table>";
+	    document.getElementById("tabla").innerHTML = out;
+		</script>
+			
+		</div>
+		<div id="tabs-2">
+			<div id="tabla2"></div>
+			<script>
+		var i;
+	    var out = "<table>";
+	    for(i=0; i<maestros.length; i++){
+	    	out +="<tr><td>" +
+	    	maestros[i].no_tarjeta +
+	    	"</td><td>" +
+	    	maestros[i].ma_apPat +
+	    	"</td><td>" +
+	    	maestros[i].ma_apMat+
+	    	"</td><td>" +
+	    	maestros[i].ma_nombre +
+	    	"</td><td>" +
+	    	maestros[i].ma_genero +
+	    	"</td></tr>";
+	    } 
+	    out += "</table>";
+	    document.getElementById("tabla2").innerHTML = out;
+		</script>
+	
+		</div>
+		<div id="tabs-3">
+			<div id="tabla3"></div>
+			 <table>
+			 	<tr><td>Ene-Jun 2019</td></tr>
+			 	<tr><td>Ago-Dic 2019</td></tr>
+			 	<tr><td>Ene-Jun 2020</td></tr>
+			 	<tr><td>Ago-Dic 2020</td></tr>
+			 	<tr><td>Ene-Jun 2021</td></tr>
+			 	<tr><td>Ago-Dic 2021</td></tr>
+			 </table>
+        </div>
+		<div id="tabs-4">
+			<form>
+				<fieldset>
+					<legend>Resiencia</legend>
+					<table>
+						<tr>
+							<td>Sector</td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="sector" id="publico" checked >Público</input>
+  					        <input type="radio" name="sector" id="privado">Privado</input> </td>
+						</tr>
+						<tr>
+							<td>Región</td>
+						</tr>
+						<tr>
+							<td><input type="radio" name="Región" id="publico" checked >Público</input>
+  					        <input type="radio" name="Región" id="privado">Privado</input> </td>
+						</tr>
+						<tr> 
+							<td> Áreas de aplicación del conocimiento (Puede seleccionar más de uno)</td>
+						</tr>
+						<tr> 
+							<td><input type="checkbox" name="areas">Tecnología
+							<input type="checkbox" name="areas"> Moviles
+							<input type="checkbox" name="areas"> Videojuegos
+							<input type="checkbox" name="areas"> Redes
+							<input type="checkbox" name="areas"> Seguridad
+							<input type="checkbox" name="areas"> Dases de Datos
+							<input type="checkbox" name="areas"> Sistemas de escritorio
+							<input type="checkbox" name="areas"> Multimedia
+							<input type="checkbox" name="areas"> Arduinos
+							<input type="checkbox" name="areas"> Usabilidad
+							<input type="checkbox" name="areas"> Documentación de sistemas
+							<input type="checkbox" name="areas"> Documentación de red</td>
+
+						</tr>
+						<tr>
+							<td>Número de alumnos asignados a éste proyecto</td>
+							</tr>
+						     <tr>
+							<td><input type="radio" checked >1</input>
+  					        <input type="radio" >2</input> 
+  					        <input type="radio" >3</input></td>
+  					        
+						</tr>
+						<tr>Lenguajes de programacón que usara el alumno (Puede seleccionar más de uno)</tr>
+						<tr>
+							<td><input type="checkbox" name="Lenguajes">MySQL
+							<input type="checkbox" name="Lenguajes"> SQL Server
+							<input type="checkbox" name="Lenguajes"> Oracle
+							<input type="checkbox" name="Lenguajes"> Mongo DB
+							<input type="checkbox" name="Lenguajes"> Firebase
+							<input type="checkbox" name="Lenguajes"> Postgre SQL
+							<input type="checkbox" name="Lenguajes"> Sybase
+							<input type="checkbox" name="Lenguajes"> SQLite</td>
+						</tr>
+						<tr>
+							<td>IDES (Entornos Integrados de Desarrollo) que usará el alumno</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" name="ides"> Sublime
+								<input type="checkbox" name="ides"> Netbeans
+								<input type="checkbox" name="ides"> Eclipse
+								<input type="checkbox" name="ides"> Visual Studio
+								<input type="checkbox" name="ides"> Visual Code
+								<input type="checkbox" name="ides"> Android Studio
+								<input type="checkbox" name="ides"> IDE Arduino
+								<input type="checkbox" name="ides"> Atom
+							</td>
+						</tr>
+						<tr>
+							<td>Frameworks de desarrollo que usara el alumno</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" name="frameworks"> Angular JS
+								<input type="checkbox" name="frameworks"> Django
+								<input type="checkbox" name="frameworks"> laravel
+								<input type="checkbox" name="frameworks"> Symfony
+								<input type="checkbox" name="frameworks"> Rubi on Rails
+								<input type="checkbox" name="frameworks"> Reactor
+								<input type="checkbox" name="frameworks"> Ionic
+								<input type="checkbox" name="frameworks"> ASP.NET
+							</td>
+						</tr>
+						<tr>
+							<td>Estado de la residencia</td>
+						</tr>
+						<tr>
+							<td>
+								<input type="checkbox" name="estado"> En proceso
+								<input type="checkbox" name="estado"> Terminada
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			</form>
+			
+	
+		</div>
+			
+	</div>
+	
+
+</body>
+</html>
